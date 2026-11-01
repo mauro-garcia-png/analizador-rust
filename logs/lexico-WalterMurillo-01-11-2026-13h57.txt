@@ -1,0 +1,515 @@
+ANÁLISIS LÉXICO
+Archivo: algoritmos/algoritmo3.rs
+Desarrollador: WalterMurillo
+Fecha: 01/11/2026 13:57:16
+
+TOKENS RECONOCIDOS
+Línea   Token          Lexema
+1       COLON          :
+1       COMMA          ,
+2       COLON          :
+2       LPAREN         (
+2       RPAREN         )
+5       LPAREN         (
+5       COLON          :
+5       COMMA          ,
+5       COLON          :
+5       RPAREN         )
+5       ARROW          ->
+5       LBRACE         {
+6       SEMICOLON      ;
+7       RBRACE         }
+10      LPAREN         (
+10      RPAREN         )
+10      LBRACE         {
+13      VEC            vec!
+13      COMMA          ,
+13      COMMA          ,
+13      COMMA          ,
+13      COMMA          ,
+13      SEMICOLON      ;
+16      RANGE          ..
+16      LBRACE         {
+17      PRINTLN        println!
+17      LPAREN         (
+17      COLON          :
+17      LBRACE         {
+17      RBRACE         }
+17      COMMA          ,
+17      RPAREN         )
+17      SEMICOLON      ;
+18      PRINTLN        println!
+18      LPAREN         (
+18      COLON          :
+18      LBRACE         {
+18      RBRACE         }
+18      COMMA          ,
+18      RPAREN         )
+18      SEMICOLON      ;
+19      RBRACE         }
+22      LPAREN         (
+22      COMMA          ,
+22      RPAREN         )
+22      SEMICOLON      ;
+24      PRINTLN        println!
+24      LPAREN         (
+24      COLON          :
+24      LBRACE         {
+24      RBRACE         }
+24      COMMA          ,
+24      RPAREN         )
+24      SEMICOLON      ;
+27      PATHSEP        ::
+27      LPAREN         (
+27      RPAREN         )
+27      SEMICOLON      ;
+28      PATHSEP        ::
+28      PATHSEP        ::
+28      LPAREN         (
+28      RPAREN         )
+28      DOT            .
+28      LPAREN         (
+28      AMP            &
+28      RPAREN         )
+28      DOT            .
+28      LPAREN         (
+28      RPAREN         )
+28      SEMICOLON      ;
+30      RBRACE         }
+
+ERRORES
+Error léxico en línea 1: carácter '/' no reconocido.
+Error léxico en línea 1: carácter '/' no reconocido.
+Error léxico en línea 1: carácter 'A' no reconocido.
+Error léxico en línea 1: carácter 'l' no reconocido.
+Error léxico en línea 1: carácter 'g' no reconocido.
+Error léxico en línea 1: carácter 'o' no reconocido.
+Error léxico en línea 1: carácter 'r' no reconocido.
+Error léxico en línea 1: carácter 'i' no reconocido.
+Error léxico en línea 1: carácter 't' no reconocido.
+Error léxico en línea 1: carácter 'm' no reconocido.
+Error léxico en línea 1: carácter 'o' no reconocido.
+Error léxico en línea 1: carácter '3' no reconocido.
+Error léxico en línea 1: carácter 'v' no reconocido.
+Error léxico en línea 1: carácter 'e' no reconocido.
+Error léxico en línea 1: carácter 'c' no reconocido.
+Error léxico en línea 1: carácter 't' no reconocido.
+Error léxico en línea 1: carácter 'o' no reconocido.
+Error léxico en línea 1: carácter 'r' no reconocido.
+Error léxico en línea 1: carácter 'e' no reconocido.
+Error léxico en línea 1: carácter 's' no reconocido.
+Error léxico en línea 1: carácter 'c' no reconocido.
+Error léxico en línea 1: carácter 'i' no reconocido.
+Error léxico en línea 1: carácter 'c' no reconocido.
+Error léxico en línea 1: carácter 'l' no reconocido.
+Error léxico en línea 1: carácter 'o' no reconocido.
+Error léxico en línea 1: carácter 's' no reconocido.
+Error léxico en línea 1: carácter 'f' no reconocido.
+Error léxico en línea 1: carácter 'o' no reconocido.
+Error léxico en línea 1: carácter 'r' no reconocido.
+Error léxico en línea 1: carácter 'y' no reconocido.
+Error léxico en línea 1: carácter 'f' no reconocido.
+Error léxico en línea 1: carácter 'u' no reconocido.
+Error léxico en línea 1: carácter 'n' no reconocido.
+Error léxico en línea 1: carácter 'c' no reconocido.
+Error léxico en línea 1: carácter 'i' no reconocido.
+Error léxico en línea 1: carácter 'o' no reconocido.
+Error léxico en línea 1: carácter 'n' no reconocido.
+Error léxico en línea 1: carácter 'e' no reconocido.
+Error léxico en línea 1: carácter 's' no reconocido.
+Error léxico en línea 1: carácter 'c' no reconocido.
+Error léxico en línea 1: carácter 'o' no reconocido.
+Error léxico en línea 1: carácter 'n' no reconocido.
+Error léxico en línea 1: carácter 'r' no reconocido.
+Error léxico en línea 1: carácter 'e' no reconocido.
+Error léxico en línea 1: carácter 't' no reconocido.
+Error léxico en línea 1: carácter 'o' no reconocido.
+Error léxico en línea 1: carácter 'r' no reconocido.
+Error léxico en línea 1: carácter 'n' no reconocido.
+Error léxico en línea 1: carácter 'o' no reconocido.
+Error léxico en línea 2: carácter '/' no reconocido.
+Error léxico en línea 2: carácter '/' no reconocido.
+Error léxico en línea 2: carácter 'A' no reconocido.
+Error léxico en línea 2: carácter 'u' no reconocido.
+Error léxico en línea 2: carácter 't' no reconocido.
+Error léxico en línea 2: carácter 'o' no reconocido.
+Error léxico en línea 2: carácter 'r' no reconocido.
+Error léxico en línea 2: carácter 'W' no reconocido.
+Error léxico en línea 2: carácter 'a' no reconocido.
+Error léxico en línea 2: carácter 'l' no reconocido.
+Error léxico en línea 2: carácter 't' no reconocido.
+Error léxico en línea 2: carácter 'e' no reconocido.
+Error léxico en línea 2: carácter 'r' no reconocido.
+Error léxico en línea 2: carácter 'M' no reconocido.
+Error léxico en línea 2: carácter 'u' no reconocido.
+Error léxico en línea 2: carácter 'r' no reconocido.
+Error léxico en línea 2: carácter 'i' no reconocido.
+Error léxico en línea 2: carácter 'l' no reconocido.
+Error léxico en línea 2: carácter 'l' no reconocido.
+Error léxico en línea 2: carácter 'o' no reconocido.
+Error léxico en línea 2: carácter 'I' no reconocido.
+Error léxico en línea 2: carácter 'n' no reconocido.
+Error léxico en línea 2: carácter 't' no reconocido.
+Error léxico en línea 2: carácter 'e' no reconocido.
+Error léxico en línea 2: carácter 'g' no reconocido.
+Error léxico en línea 2: carácter 'r' no reconocido.
+Error léxico en línea 2: carácter 'a' no reconocido.
+Error léxico en línea 2: carácter 'n' no reconocido.
+Error léxico en línea 2: carácter 't' no reconocido.
+Error léxico en línea 2: carácter 'e' no reconocido.
+Error léxico en línea 2: carácter '3' no reconocido.
+Error léxico en línea 4: carácter '/' no reconocido.
+Error léxico en línea 4: carácter '/' no reconocido.
+Error léxico en línea 4: carácter 'F' no reconocido.
+Error léxico en línea 4: carácter 'u' no reconocido.
+Error léxico en línea 4: carácter 'n' no reconocido.
+Error léxico en línea 4: carácter 'c' no reconocido.
+Error léxico en línea 4: carácter 'i' no reconocido.
+Error léxico en línea 4: carácter 'ó' no reconocido.
+Error léxico en línea 4: carácter 'n' no reconocido.
+Error léxico en línea 4: carácter 'q' no reconocido.
+Error léxico en línea 4: carácter 'u' no reconocido.
+Error léxico en línea 4: carácter 'e' no reconocido.
+Error léxico en línea 4: carácter 'c' no reconocido.
+Error léxico en línea 4: carácter 'a' no reconocido.
+Error léxico en línea 4: carácter 'l' no reconocido.
+Error léxico en línea 4: carácter 'c' no reconocido.
+Error léxico en línea 4: carácter 'u' no reconocido.
+Error léxico en línea 4: carácter 'l' no reconocido.
+Error léxico en línea 4: carácter 'a' no reconocido.
+Error léxico en línea 4: carácter 'l' no reconocido.
+Error léxico en línea 4: carácter 'a' no reconocido.
+Error léxico en línea 4: carácter 's' no reconocido.
+Error léxico en línea 4: carácter 'u' no reconocido.
+Error léxico en línea 4: carácter 'm' no reconocido.
+Error léxico en línea 4: carácter 'a' no reconocido.
+Error léxico en línea 4: carácter 'd' no reconocido.
+Error léxico en línea 4: carácter 'e' no reconocido.
+Error léxico en línea 4: carácter 'd' no reconocido.
+Error léxico en línea 4: carácter 'o' no reconocido.
+Error léxico en línea 4: carácter 's' no reconocido.
+Error léxico en línea 4: carácter 'n' no reconocido.
+Error léxico en línea 4: carácter 'ú' no reconocido.
+Error léxico en línea 4: carácter 'm' no reconocido.
+Error léxico en línea 4: carácter 'e' no reconocido.
+Error léxico en línea 4: carácter 'r' no reconocido.
+Error léxico en línea 4: carácter 'o' no reconocido.
+Error léxico en línea 4: carácter 's' no reconocido.
+Error léxico en línea 5: carácter 'f' no reconocido.
+Error léxico en línea 5: carácter 'n' no reconocido.
+Error léxico en línea 5: carácter 's' no reconocido.
+Error léxico en línea 5: carácter 'u' no reconocido.
+Error léxico en línea 5: carácter 'm' no reconocido.
+Error léxico en línea 5: carácter 'a' no reconocido.
+Error léxico en línea 5: carácter 'r' no reconocido.
+Error léxico en línea 5: carácter 'a' no reconocido.
+Error léxico en línea 5: carácter 'i' no reconocido.
+Error léxico en línea 5: carácter '3' no reconocido.
+Error léxico en línea 5: carácter '2' no reconocido.
+Error léxico en línea 5: carácter 'b' no reconocido.
+Error léxico en línea 5: carácter 'i' no reconocido.
+Error léxico en línea 5: carácter '3' no reconocido.
+Error léxico en línea 5: carácter '2' no reconocido.
+Error léxico en línea 5: carácter 'i' no reconocido.
+Error léxico en línea 5: carácter '3' no reconocido.
+Error léxico en línea 5: carácter '2' no reconocido.
+Error léxico en línea 6: carácter 'r' no reconocido.
+Error léxico en línea 6: carácter 'e' no reconocido.
+Error léxico en línea 6: carácter 't' no reconocido.
+Error léxico en línea 6: carácter 'u' no reconocido.
+Error léxico en línea 6: carácter 'r' no reconocido.
+Error léxico en línea 6: carácter 'n' no reconocido.
+Error léxico en línea 6: carácter 'a' no reconocido.
+Error léxico en línea 6: carácter '+' no reconocido.
+Error léxico en línea 6: carácter 'b' no reconocido.
+Error léxico en línea 9: carácter '/' no reconocido.
+Error léxico en línea 9: carácter '/' no reconocido.
+Error léxico en línea 9: carácter 'F' no reconocido.
+Error léxico en línea 9: carácter 'u' no reconocido.
+Error léxico en línea 9: carácter 'n' no reconocido.
+Error léxico en línea 9: carácter 'c' no reconocido.
+Error léxico en línea 9: carácter 'i' no reconocido.
+Error léxico en línea 9: carácter 'ó' no reconocido.
+Error léxico en línea 9: carácter 'n' no reconocido.
+Error léxico en línea 9: carácter 'p' no reconocido.
+Error léxico en línea 9: carácter 'r' no reconocido.
+Error léxico en línea 9: carácter 'i' no reconocido.
+Error léxico en línea 9: carácter 'n' no reconocido.
+Error léxico en línea 9: carácter 'c' no reconocido.
+Error léxico en línea 9: carácter 'i' no reconocido.
+Error léxico en línea 9: carácter 'p' no reconocido.
+Error léxico en línea 9: carácter 'a' no reconocido.
+Error léxico en línea 9: carácter 'l' no reconocido.
+Error léxico en línea 10: carácter 'f' no reconocido.
+Error léxico en línea 10: carácter 'n' no reconocido.
+Error léxico en línea 10: carácter 'm' no reconocido.
+Error léxico en línea 10: carácter 'a' no reconocido.
+Error léxico en línea 10: carácter 'i' no reconocido.
+Error léxico en línea 10: carácter 'n' no reconocido.
+Error léxico en línea 12: carácter '/' no reconocido.
+Error léxico en línea 12: carácter '/' no reconocido.
+Error léxico en línea 12: carácter 'D' no reconocido.
+Error léxico en línea 12: carácter 'e' no reconocido.
+Error léxico en línea 12: carácter 'c' no reconocido.
+Error léxico en línea 12: carácter 'l' no reconocido.
+Error léxico en línea 12: carácter 'a' no reconocido.
+Error léxico en línea 12: carácter 'r' no reconocido.
+Error léxico en línea 12: carácter 'a' no reconocido.
+Error léxico en línea 12: carácter 'c' no reconocido.
+Error léxico en línea 12: carácter 'i' no reconocido.
+Error léxico en línea 12: carácter 'ó' no reconocido.
+Error léxico en línea 12: carácter 'n' no reconocido.
+Error léxico en línea 12: carácter 'd' no reconocido.
+Error léxico en línea 12: carácter 'e' no reconocido.
+Error léxico en línea 12: carácter 'u' no reconocido.
+Error léxico en línea 12: carácter 'n' no reconocido.
+Error léxico en línea 12: carácter 'v' no reconocido.
+Error léxico en línea 12: carácter 'e' no reconocido.
+Error léxico en línea 12: carácter 'c' no reconocido.
+Error léxico en línea 12: carácter 't' no reconocido.
+Error léxico en línea 12: carácter 'o' no reconocido.
+Error léxico en línea 12: carácter 'r' no reconocido.
+Error léxico en línea 13: carácter 'l' no reconocido.
+Error léxico en línea 13: carácter 'e' no reconocido.
+Error léxico en línea 13: carácter 't' no reconocido.
+Error léxico en línea 13: carácter 'm' no reconocido.
+Error léxico en línea 13: carácter 'u' no reconocido.
+Error léxico en línea 13: carácter 't' no reconocido.
+Error léxico en línea 13: carácter 'n' no reconocido.
+Error léxico en línea 13: carácter 'u' no reconocido.
+Error léxico en línea 13: carácter 'm' no reconocido.
+Error léxico en línea 13: carácter 'e' no reconocido.
+Error léxico en línea 13: carácter 'r' no reconocido.
+Error léxico en línea 13: carácter 'o' no reconocido.
+Error léxico en línea 13: carácter 's' no reconocido.
+Error léxico en línea 13: carácter '=' no reconocido.
+Error léxico en línea 13: carácter '[' no reconocido.
+Error léxico en línea 13: carácter '1' no reconocido.
+Error léxico en línea 13: carácter '0' no reconocido.
+Error léxico en línea 13: carácter '2' no reconocido.
+Error léxico en línea 13: carácter '0' no reconocido.
+Error léxico en línea 13: carácter '3' no reconocido.
+Error léxico en línea 13: carácter '0' no reconocido.
+Error léxico en línea 13: carácter '4' no reconocido.
+Error léxico en línea 13: carácter '0' no reconocido.
+Error léxico en línea 13: carácter '5' no reconocido.
+Error léxico en línea 13: carácter '0' no reconocido.
+Error léxico en línea 13: carácter ']' no reconocido.
+Error léxico en línea 15: carácter '/' no reconocido.
+Error léxico en línea 15: carácter '/' no reconocido.
+Error léxico en línea 15: carácter 'R' no reconocido.
+Error léxico en línea 15: carácter 'e' no reconocido.
+Error léxico en línea 15: carácter 'c' no reconocido.
+Error léxico en línea 15: carácter 'o' no reconocido.
+Error léxico en línea 15: carácter 'r' no reconocido.
+Error léxico en línea 15: carácter 'r' no reconocido.
+Error léxico en línea 15: carácter 'i' no reconocido.
+Error léxico en línea 15: carácter 'd' no reconocido.
+Error léxico en línea 15: carácter 'o' no reconocido.
+Error léxico en línea 15: carácter 'u' no reconocido.
+Error léxico en línea 15: carácter 't' no reconocido.
+Error léxico en línea 15: carácter 'i' no reconocido.
+Error léxico en línea 15: carácter 'l' no reconocido.
+Error léxico en línea 15: carácter 'i' no reconocido.
+Error léxico en línea 15: carácter 'z' no reconocido.
+Error léxico en línea 15: carácter 'a' no reconocido.
+Error léxico en línea 15: carácter 'n' no reconocido.
+Error léxico en línea 15: carácter 'd' no reconocido.
+Error léxico en línea 15: carácter 'o' no reconocido.
+Error léxico en línea 15: carácter 'f' no reconocido.
+Error léxico en línea 15: carácter 'o' no reconocido.
+Error léxico en línea 15: carácter 'r' no reconocido.
+Error léxico en línea 15: carácter 'e' no reconocido.
+Error léxico en línea 15: carácter 'i' no reconocido.
+Error léxico en línea 15: carácter 'n' no reconocido.
+Error léxico en línea 16: carácter 'f' no reconocido.
+Error léxico en línea 16: carácter 'o' no reconocido.
+Error léxico en línea 16: carácter 'r' no reconocido.
+Error léxico en línea 16: carácter 'i' no reconocido.
+Error léxico en línea 16: carácter 'i' no reconocido.
+Error léxico en línea 16: carácter 'n' no reconocido.
+Error léxico en línea 16: carácter '0' no reconocido.
+Error léxico en línea 16: carácter '5' no reconocido.
+Error léxico en línea 17: carácter '"' no reconocido.
+Error léxico en línea 17: carácter 'P' no reconocido.
+Error léxico en línea 17: carácter 'o' no reconocido.
+Error léxico en línea 17: carácter 's' no reconocido.
+Error léxico en línea 17: carácter 'i' no reconocido.
+Error léxico en línea 17: carácter 'c' no reconocido.
+Error léxico en línea 17: carácter 'i' no reconocido.
+Error léxico en línea 17: carácter 'ó' no reconocido.
+Error léxico en línea 17: carácter 'n' no reconocido.
+Error léxico en línea 17: carácter '"' no reconocido.
+Error léxico en línea 17: carácter 'i' no reconocido.
+Error léxico en línea 18: carácter '"' no reconocido.
+Error léxico en línea 18: carácter 'V' no reconocido.
+Error léxico en línea 18: carácter 'a' no reconocido.
+Error léxico en línea 18: carácter 'l' no reconocido.
+Error léxico en línea 18: carácter 'o' no reconocido.
+Error léxico en línea 18: carácter 'r' no reconocido.
+Error léxico en línea 18: carácter '"' no reconocido.
+Error léxico en línea 18: carácter 'n' no reconocido.
+Error léxico en línea 18: carácter 'u' no reconocido.
+Error léxico en línea 18: carácter 'm' no reconocido.
+Error léxico en línea 18: carácter 'e' no reconocido.
+Error léxico en línea 18: carácter 'r' no reconocido.
+Error léxico en línea 18: carácter 'o' no reconocido.
+Error léxico en línea 18: carácter 's' no reconocido.
+Error léxico en línea 18: carácter '[' no reconocido.
+Error léxico en línea 18: carácter 'i' no reconocido.
+Error léxico en línea 18: carácter ']' no reconocido.
+Error léxico en línea 21: carácter '/' no reconocido.
+Error léxico en línea 21: carácter '/' no reconocido.
+Error léxico en línea 21: carácter 'L' no reconocido.
+Error léxico en línea 21: carácter 'l' no reconocido.
+Error léxico en línea 21: carácter 'a' no reconocido.
+Error léxico en línea 21: carácter 'm' no reconocido.
+Error léxico en línea 21: carácter 'a' no reconocido.
+Error léxico en línea 21: carácter 'd' no reconocido.
+Error léxico en línea 21: carácter 'a' no reconocido.
+Error léxico en línea 21: carácter 'a' no reconocido.
+Error léxico en línea 21: carácter 'u' no reconocido.
+Error léxico en línea 21: carácter 'n' no reconocido.
+Error léxico en línea 21: carácter 'a' no reconocido.
+Error léxico en línea 21: carácter 'f' no reconocido.
+Error léxico en línea 21: carácter 'u' no reconocido.
+Error léxico en línea 21: carácter 'n' no reconocido.
+Error léxico en línea 21: carácter 'c' no reconocido.
+Error léxico en línea 21: carácter 'i' no reconocido.
+Error léxico en línea 21: carácter 'ó' no reconocido.
+Error léxico en línea 21: carácter 'n' no reconocido.
+Error léxico en línea 22: carácter 'l' no reconocido.
+Error léxico en línea 22: carácter 'e' no reconocido.
+Error léxico en línea 22: carácter 't' no reconocido.
+Error léxico en línea 22: carácter 'r' no reconocido.
+Error léxico en línea 22: carácter 'e' no reconocido.
+Error léxico en línea 22: carácter 's' no reconocido.
+Error léxico en línea 22: carácter 'u' no reconocido.
+Error léxico en línea 22: carácter 'l' no reconocido.
+Error léxico en línea 22: carácter 't' no reconocido.
+Error léxico en línea 22: carácter 'a' no reconocido.
+Error léxico en línea 22: carácter 'd' no reconocido.
+Error léxico en línea 22: carácter 'o' no reconocido.
+Error léxico en línea 22: carácter '=' no reconocido.
+Error léxico en línea 22: carácter 's' no reconocido.
+Error léxico en línea 22: carácter 'u' no reconocido.
+Error léxico en línea 22: carácter 'm' no reconocido.
+Error léxico en línea 22: carácter 'a' no reconocido.
+Error léxico en línea 22: carácter 'r' no reconocido.
+Error léxico en línea 22: carácter '1' no reconocido.
+Error léxico en línea 22: carácter '5' no reconocido.
+Error léxico en línea 22: carácter '2' no reconocido.
+Error léxico en línea 22: carácter '5' no reconocido.
+Error léxico en línea 24: carácter '"' no reconocido.
+Error léxico en línea 24: carácter 'R' no reconocido.
+Error léxico en línea 24: carácter 'e' no reconocido.
+Error léxico en línea 24: carácter 's' no reconocido.
+Error léxico en línea 24: carácter 'u' no reconocido.
+Error léxico en línea 24: carácter 'l' no reconocido.
+Error léxico en línea 24: carácter 't' no reconocido.
+Error léxico en línea 24: carácter 'a' no reconocido.
+Error léxico en línea 24: carácter 'd' no reconocido.
+Error léxico en línea 24: carácter 'o' no reconocido.
+Error léxico en línea 24: carácter 'd' no reconocido.
+Error léxico en línea 24: carácter 'e' no reconocido.
+Error léxico en línea 24: carácter 'l' no reconocido.
+Error léxico en línea 24: carácter 'a' no reconocido.
+Error léxico en línea 24: carácter 's' no reconocido.
+Error léxico en línea 24: carácter 'u' no reconocido.
+Error léxico en línea 24: carácter 'm' no reconocido.
+Error léxico en línea 24: carácter 'a' no reconocido.
+Error léxico en línea 24: carácter '"' no reconocido.
+Error léxico en línea 24: carácter 'r' no reconocido.
+Error léxico en línea 24: carácter 'e' no reconocido.
+Error léxico en línea 24: carácter 's' no reconocido.
+Error léxico en línea 24: carácter 'u' no reconocido.
+Error léxico en línea 24: carácter 'l' no reconocido.
+Error léxico en línea 24: carácter 't' no reconocido.
+Error léxico en línea 24: carácter 'a' no reconocido.
+Error léxico en línea 24: carácter 'd' no reconocido.
+Error léxico en línea 24: carácter 'o' no reconocido.
+Error léxico en línea 26: carácter '/' no reconocido.
+Error léxico en línea 26: carácter '/' no reconocido.
+Error léxico en línea 26: carácter 'E' no reconocido.
+Error léxico en línea 26: carácter 'j' no reconocido.
+Error léxico en línea 26: carácter 'e' no reconocido.
+Error léxico en línea 26: carácter 'm' no reconocido.
+Error léxico en línea 26: carácter 'p' no reconocido.
+Error léxico en línea 26: carácter 'l' no reconocido.
+Error léxico en línea 26: carácter 'o' no reconocido.
+Error léxico en línea 26: carácter 'd' no reconocido.
+Error léxico en línea 26: carácter 'e' no reconocido.
+Error léxico en línea 26: carácter 'l' no reconocido.
+Error léxico en línea 26: carácter 'e' no reconocido.
+Error léxico en línea 26: carácter 'c' no reconocido.
+Error léxico en línea 26: carácter 't' no reconocido.
+Error léxico en línea 26: carácter 'u' no reconocido.
+Error léxico en línea 26: carácter 'r' no reconocido.
+Error léxico en línea 26: carácter 'a' no reconocido.
+Error léxico en línea 26: carácter 'd' no reconocido.
+Error léxico en línea 26: carácter 'e' no reconocido.
+Error léxico en línea 26: carácter 'd' no reconocido.
+Error léxico en línea 26: carácter 'a' no reconocido.
+Error léxico en línea 26: carácter 't' no reconocido.
+Error léxico en línea 26: carácter 'o' no reconocido.
+Error léxico en línea 26: carácter 's' no reconocido.
+Error léxico en línea 27: carácter 'l' no reconocido.
+Error léxico en línea 27: carácter 'e' no reconocido.
+Error léxico en línea 27: carácter 't' no reconocido.
+Error léxico en línea 27: carácter 'm' no reconocido.
+Error léxico en línea 27: carácter 'u' no reconocido.
+Error léxico en línea 27: carácter 't' no reconocido.
+Error léxico en línea 27: carácter 'e' no reconocido.
+Error léxico en línea 27: carácter 'n' no reconocido.
+Error léxico en línea 27: carácter 't' no reconocido.
+Error léxico en línea 27: carácter 'r' no reconocido.
+Error léxico en línea 27: carácter 'a' no reconocido.
+Error léxico en línea 27: carácter 'd' no reconocido.
+Error léxico en línea 27: carácter 'a' no reconocido.
+Error léxico en línea 27: carácter '=' no reconocido.
+Error léxico en línea 27: carácter 'S' no reconocido.
+Error léxico en línea 27: carácter 't' no reconocido.
+Error léxico en línea 27: carácter 'r' no reconocido.
+Error léxico en línea 27: carácter 'i' no reconocido.
+Error léxico en línea 27: carácter 'n' no reconocido.
+Error léxico en línea 27: carácter 'g' no reconocido.
+Error léxico en línea 27: carácter 'n' no reconocido.
+Error léxico en línea 27: carácter 'e' no reconocido.
+Error léxico en línea 27: carácter 'w' no reconocido.
+Error léxico en línea 28: carácter 's' no reconocido.
+Error léxico en línea 28: carácter 't' no reconocido.
+Error léxico en línea 28: carácter 'd' no reconocido.
+Error léxico en línea 28: carácter 'i' no reconocido.
+Error léxico en línea 28: carácter 'o' no reconocido.
+Error léxico en línea 28: carácter 's' no reconocido.
+Error léxico en línea 28: carácter 't' no reconocido.
+Error léxico en línea 28: carácter 'd' no reconocido.
+Error léxico en línea 28: carácter 'i' no reconocido.
+Error léxico en línea 28: carácter 'n' no reconocido.
+Error léxico en línea 28: carácter 'r' no reconocido.
+Error léxico en línea 28: carácter 'e' no reconocido.
+Error léxico en línea 28: carácter 'a' no reconocido.
+Error léxico en línea 28: carácter 'd' no reconocido.
+Error léxico en línea 28: carácter '_' no reconocido.
+Error léxico en línea 28: carácter 'l' no reconocido.
+Error léxico en línea 28: carácter 'i' no reconocido.
+Error léxico en línea 28: carácter 'n' no reconocido.
+Error léxico en línea 28: carácter 'e' no reconocido.
+Error léxico en línea 28: carácter 'm' no reconocido.
+Error léxico en línea 28: carácter 'u' no reconocido.
+Error léxico en línea 28: carácter 't' no reconocido.
+Error léxico en línea 28: carácter 'e' no reconocido.
+Error léxico en línea 28: carácter 'n' no reconocido.
+Error léxico en línea 28: carácter 't' no reconocido.
+Error léxico en línea 28: carácter 'r' no reconocido.
+Error léxico en línea 28: carácter 'a' no reconocido.
+Error léxico en línea 28: carácter 'd' no reconocido.
+Error léxico en línea 28: carácter 'a' no reconocido.
+Error léxico en línea 28: carácter 'u' no reconocido.
+Error léxico en línea 28: carácter 'n' no reconocido.
+Error léxico en línea 28: carácter 'w' no reconocido.
+Error léxico en línea 28: carácter 'r' no reconocido.
+Error léxico en línea 28: carácter 'a' no reconocido.
+Error léxico en línea 28: carácter 'p' no reconocido.
+
+Total: 71 tokens válidos, 433 errores

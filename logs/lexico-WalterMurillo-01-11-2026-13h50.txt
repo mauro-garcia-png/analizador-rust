@@ -1,0 +1,60 @@
+ANÁLISIS LÉXICO
+Archivo: algoritmos/prueba_tokens_walter.rs
+Desarrollador: WalterMurillo
+Fecha: 01/11/2026 13:50:22
+
+TOKENS RECONOCIDOS
+Línea   Token          Lexema
+3       PRINTLN        println!
+4       VEC            vec!
+5       RANGE          ..
+6       ARROW          ->
+7       PATHSEP        ::
+8       AMP            &
+9       SEMICOLON      ;
+10      LBRACE         {
+11      RBRACE         }
+
+ERRORES
+Error léxico en línea 1: carácter '/' no reconocido.
+Error léxico en línea 1: carácter '/' no reconocido.
+Error léxico en línea 1: carácter 'P' no reconocido.
+Error léxico en línea 1: carácter 'r' no reconocido.
+Error léxico en línea 1: carácter 'u' no reconocido.
+Error léxico en línea 1: carácter 'e' no reconocido.
+Error léxico en línea 1: carácter 'b' no reconocido.
+Error léxico en línea 1: carácter 'a' no reconocido.
+Error léxico en línea 1: carácter 'i' no reconocido.
+Error léxico en línea 1: carácter 'n' no reconocido.
+Error léxico en línea 1: carácter 'd' no reconocido.
+Error léxico en línea 1: carácter 'i' no reconocido.
+Error léxico en línea 1: carácter 'v' no reconocido.
+Error léxico en línea 1: carácter 'i' no reconocido.
+Error léxico en línea 1: carácter 'd' no reconocido.
+Error léxico en línea 1: carácter 'u' no reconocido.
+Error léxico en línea 1: carácter 'a' no reconocido.
+Error léxico en línea 1: carácter 'l' no reconocido.
+Error léxico en línea 1: carácter 'd' no reconocido.
+Error léxico en línea 1: carácter 'e' no reconocido.
+Error léxico en línea 1: carácter 't' no reconocido.
+Error léxico en línea 1: carácter 'o' no reconocido.
+Error léxico en línea 1: carácter 'k' no reconocido.
+Error léxico en línea 1: carácter 'e' no reconocido.
+Error léxico en línea 1: carácter 'n' no reconocido.
+Error léxico en línea 1: carácter 's' no reconocido.
+Error léxico en línea 1: carácter '-' no reconocido.
+Error léxico en línea 1: carácter 'W' no reconocido.
+Error léxico en línea 1: carácter 'a' no reconocido.
+Error léxico en línea 1: carácter 'l' no reconocido.
+Error léxico en línea 1: carácter 't' no reconocido.
+Error léxico en línea 1: carácter 'e' no reconocido.
+Error léxico en línea 1: carácter 'r' no reconocido.
+Error léxico en línea 1: carácter 'M' no reconocido.
+Error léxico en línea 1: carácter 'u' no reconocido.
+Error léxico en línea 1: carácter 'r' no reconocido.
+Error léxico en línea 1: carácter 'i' no reconocido.
+Error léxico en línea 1: carácter 'l' no reconocido.
+Error léxico en línea 1: carácter 'l' no reconocido.
+Error léxico en línea 1: carácter 'o' no reconocido.
+
+Total: 9 tokens válidos, 40 errores

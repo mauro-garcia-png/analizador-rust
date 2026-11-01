@@ -54,9 +54,49 @@ t_DOT = r'\.'
 # <<< FIN APORTE INTEGRANTE 2
 
 
-# >>> INICIO APORTE INTEGRANTE 3: Nombre Apellido (usuario GitHub)
-# (Pegar aquí el código del Integrante 3)
-# <<< FIN APORTE INTEGRANTE 3
+# >>> INICIO APORTE INTEGRANTE 3: Walter Murillo (waledos1)
+# Palabras reservadas y tokens adicionales para Rust
+
+reserved.update({
+    'for': 'FOR',
+    'in': 'IN',
+    'return': 'RETURN',
+})
+
+tokens += [
+    'RANGE',       # ..
+    'ARROW',       # ->
+    'PATHSEP',     # ::
+    'AMP',         # &
+    'SEMICOLON',   # ;
+    'LBRACE',      # {
+    'RBRACE',      # }
+    'PRINTLN',     # println!
+    'VEC',         # vec!
+]
+
+# Operadores y delimitadores
+t_RANGE = r'\.\.'
+t_ARROW = r'->'
+t_PATHSEP = r'::'
+t_AMP = r'&'
+t_SEMICOLON = r';'
+t_LBRACE = r'\{'
+t_RBRACE = r'\}'
+
+# Macros de Rust
+t_PRINTLN = r'println!'
+t_VEC = r'vec!'
+
+# Manejo personalizado de errores léxicos
+def t_error(t):
+    mensaje = (
+        f"Error léxico en línea {t.lineno}: "
+        f"carácter '{t.value[0]}' no reconocido."
+    )
+    errores.append(mensaje)
+    t.lexer.skip(1)
+# <<< FIN APORTE INTEGRANTE 3: 
 
 
 # ------------------------------------------------------------

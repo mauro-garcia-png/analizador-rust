@@ -1,0 +1,21 @@
+ANÁLISIS LÉXICO
+Archivo: algoritmos/prueba_tokens_walter.rs
+Desarrollador: WalterMurillo
+Fecha: 01/11/2026 13:53:26
+
+TOKENS RECONOCIDOS
+Línea   Token          Lexema
+1       PRINTLN        println!
+2       VEC            vec!
+3       RANGE          ..
+4       ARROW          ->
+5       PATHSEP        ::
+6       AMP            &
+7       SEMICOLON      ;
+8       LBRACE         {
+9       RBRACE         }
+
+ERRORES
+Ninguno
+
+Total: 9 tokens válidos, 0 errores
