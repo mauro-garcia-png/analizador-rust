@@ -45,6 +45,14 @@ tokens += [
     'LBRACKET',
     'RBRACKET',
 ]
+# Operadores y delimitadores
+t_PLUS = r'\+'
+t_MINUS = r'-'
+t_TIMES = r'\*'
+t_DIVIDE = r'/'
+t_ASSIGN = r'='
+t_LBRACKET = r'\['
+t_RBRACKET = r'\]'
 # Números decimales (debe estar antes de INTEGER)
 def t_FLOAT(t):
     r'\d+\.\d+'
