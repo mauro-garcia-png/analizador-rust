@@ -45,6 +45,46 @@ tokens += [
     'LBRACKET',
     'RBRACKET',
 ]
+# Números decimales (debe estar antes de INTEGER)
+def t_FLOAT(t):
+    r'\d+\.\d+'
+    t.value = float(t.value)
+    return t
+
+# Números enteros
+def t_INTEGER(t):
+    r'\d+'
+    t.value = int(t.value)
+    return t
+
+# Cadenas de texto
+def t_STRING(t):
+    r'"([^\\\n]|(\\.))*?"'
+    t.value = t.value[1:-1]
+    return t
+
+# Identificadores y palabras reservadas
+def t_ID(t):
+    r'[a-zA-Z_][a-zA-Z0-9_]*!?'
+
+    if t.value == 'println!':
+        t.type = 'PRINTLN'
+    elif t.value == 'vec!':
+        t.type = 'VEC'
+    else:
+        t.type = reserved.get(t.value, 'ID')
+
+    return t
+
+# Comentarios de una línea
+def t_COMENTARIO_LINEA(t):
+    r'//[^\n]*'
+    pass
+
+# Comentarios de varias líneas
+def t_COMENTARIO_BLOQUE(t):
+    r'/\*[\s\S]*?\*/'
+    t.lexer.lineno += t.value.count('\n')
 # <<< FIN APORTE INTEGRANTE 1
 
 
