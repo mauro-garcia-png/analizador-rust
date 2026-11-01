@@ -18,7 +18,33 @@ tokens = []
 errores = []
 
 
-# >>> INICIO APORTE INTEGRANTE 1: Nombre Apellido (usuario GitHub)
+# >>> INICIO APORTE INTEGRANTE 1: Misael Moreira (mijo5002)
+# Palabras reservadas
+reserved.update({
+    'let': 'LET',
+    'mut': 'MUT',
+    'if': 'IF',
+    'else': 'ELSE',
+    'i32': 'I32',
+    'f64': 'F64',
+    'bool': 'BOOL',
+    'String': 'STRING_TYPE',
+})
+
+# Tokens adicionales
+tokens += [
+    'ID',
+    'INTEGER',
+    'FLOAT',
+    'STRING',
+    'PLUS',
+    'MINUS',
+    'TIMES',
+    'DIVIDE',
+    'ASSIGN',
+    'LBRACKET',
+    'RBRACKET',
+]
 # <<< FIN APORTE INTEGRANTE 1
 
 
