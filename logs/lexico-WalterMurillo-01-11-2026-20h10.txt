@@ -1,0 +1,126 @@
+ANÁLISIS LÉXICO
+Archivo: algoritmos/algoritmo3.rs
+Desarrollador: WalterMurillo
+Fecha: 01/11/2026 20:10:21
+
+TOKENS RECONOCIDOS
+Línea   Token          Lexema
+5       FN             fn
+5       ID             sumar
+5       LPAREN         (
+5       ID             a
+5       COLON          :
+5       I32            i32
+5       COMMA          ,
+5       ID             b
+5       COLON          :
+5       I32            i32
+5       RPAREN         )
+5       ARROW          ->
+5       I32            i32
+5       LBRACE         {
+6       RETURN         return
+6       ID             a
+6       PLUS           +
+6       ID             b
+6       SEMICOLON      ;
+7       RBRACE         }
+10      FN             fn
+10      ID             main
+10      LPAREN         (
+10      RPAREN         )
+10      LBRACE         {
+13      LET            let
+13      MUT            mut
+13      ID             numeros
+13      ASSIGN         =
+13      VEC            vec!
+13      LBRACKET       [
+13      INTEGER        10
+13      COMMA          ,
+13      INTEGER        20
+13      COMMA          ,
+13      INTEGER        30
+13      COMMA          ,
+13      INTEGER        40
+13      COMMA          ,
+13      INTEGER        50
+13      RBRACKET       ]
+13      SEMICOLON      ;
+16      FOR            for
+16      ID             i
+16      IN             in
+16      INTEGER        0
+16      RANGE          ..
+16      INTEGER        5
+16      LBRACE         {
+17      PRINTLN        println!
+17      LPAREN         (
+17      STRING         Posición: {}
+17      COMMA          ,
+17      ID             i
+17      RPAREN         )
+17      SEMICOLON      ;
+18      PRINTLN        println!
+18      LPAREN         (
+18      STRING         Valor: {}
+18      COMMA          ,
+18      ID             numeros
+18      LBRACKET       [
+18      ID             i
+18      RBRACKET       ]
+18      RPAREN         )
+18      SEMICOLON      ;
+19      RBRACE         }
+22      LET            let
+22      ID             resultado
+22      ASSIGN         =
+22      ID             sumar
+22      LPAREN         (
+22      INTEGER        15
+22      COMMA          ,
+22      INTEGER        25
+22      RPAREN         )
+22      SEMICOLON      ;
+24      PRINTLN        println!
+24      LPAREN         (
+24      STRING         Resultado de la suma: {}
+24      COMMA          ,
+24      ID             resultado
+24      RPAREN         )
+24      SEMICOLON      ;
+27      LET            let
+27      MUT            mut
+27      ID             entrada
+27      ASSIGN         =
+27      STRING_TYPE    String
+27      PATHSEP        ::
+27      ID             new
+27      LPAREN         (
+27      RPAREN         )
+27      SEMICOLON      ;
+28      ID             std
+28      PATHSEP        ::
+28      ID             io
+28      PATHSEP        ::
+28      ID             stdin
+28      LPAREN         (
+28      RPAREN         )
+28      DOT            .
+28      ID             read_line
+28      LPAREN         (
+28      AMP            &
+28      MUT            mut
+28      ID             entrada
+28      RPAREN         )
+28      DOT            .
+28      ID             unwrap
+28      LPAREN         (
+28      RPAREN         )
+28      SEMICOLON      ;
+30      RBRACE         }
+
+ERRORES
+Ninguno
+
+Total: 114 tokens válidos, 0 errores

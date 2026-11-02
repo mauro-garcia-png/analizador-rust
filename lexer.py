@@ -158,10 +158,6 @@ t_SEMICOLON = r';'
 t_LBRACE = r'\{'
 t_RBRACE = r'\}'
 
-# Macros de Rust
-t_PRINTLN = r'println!'
-t_VEC = r'vec!'
-
 # Manejo personalizado de errores léxicos
 def t_error(t):
     mensaje = (
