@@ -73,7 +73,7 @@ def t_STRING(t):
 
 # Identificadores y palabras reservadas
 def t_ID(t):
-    r'[a-zA-Z_][a-zA-Z0-9_]*!?'
+    r'[a-zA-Z_][a-zA-Z0-9_]*(!(?!=))?'
 
     if t.value == 'println!':
         t.type = 'PRINTLN'

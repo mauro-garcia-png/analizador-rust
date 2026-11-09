@@ -378,7 +378,7 @@ def analizar(codigo):
 def generar_log(archivo, usuario, errores):
     ahora = datetime.now()
     os.makedirs(CARPETA_LOGS, exist_ok=True)
-    nombre = f"sintactico-{usuario}-{ahora.strftime('%d%m%Y-%Hh%M')}.txt"
+    nombre = f"sintactico-{usuario}-{ahora.strftime('%d-%m-%Y-%Hh%M')}.txt"
     ruta = os.path.join(CARPETA_LOGS, nombre)
     with open(ruta, 'w', encoding='utf-8') as f:
         f.write("ANÁLISIS SINTÁCTICO\n")
