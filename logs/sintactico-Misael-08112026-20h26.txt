@@ -1,0 +1,16 @@
+ANÁLISIS SINTÁCTICO
+Archivo: algoritmos/algoritmo1.rs
+Desarrollador: Misael
+Fecha: 08/11/2026 20:26:01
+
+ERRORES
+Error sintáctico en línea 25: token inesperado '['.
+Error sintáctico en línea 28: token inesperado 'if'.
+Error sintáctico en línea 30: token inesperado '}'.
+Error sintáctico en línea 32: token inesperado '}'.
+Error sintáctico en línea 36: token inesperado '}'.
+Error sintáctico en línea 38: token inesperado '}'.
+Error sintáctico en línea 41: token inesperado '('.
+Error sintáctico en línea 44: token inesperado '}'.
+
+Resultado: 8 errores

@@ -1,0 +1,137 @@
+ANÁLISIS LÉXICO
+Archivo: algoritmos/algoritmo1.rs
+Desarrollador: Misael
+Fecha: 08/11/2026 17:14:17
+
+TOKENS RECONOCIDOS
+Línea   Token          Lexema
+5       FN             fn
+5       ID             main
+5       LPAREN         (
+5       RPAREN         )
+5       LBRACE         {
+7       LET            let
+7       MUT            mut
+7       ID             edad
+7       COLON          :
+7       I32            i32
+7       ASSIGN         =
+7       INTEGER        23
+7       SEMICOLON      ;
+8       LET            let
+8       ID             altura
+8       COLON          :
+8       F64            f64
+8       ASSIGN         =
+8       FLOAT          1.75
+8       SEMICOLON      ;
+9       LET            let
+9       ID             activo
+9       COLON          :
+9       BOOL           bool
+9       ASSIGN         =
+9       TRUE           true
+9       SEMICOLON      ;
+10      LET            let
+10      ID             nombre
+10      COLON          :
+10      STRING_TYPE    String
+10      ASSIGN         =
+10      STRING         Misael
+10      SEMICOLON      ;
+13      LET            let
+13      ID             suma
+13      COLON          :
+13      I32            i32
+13      ASSIGN         =
+13      ID             edad
+13      PLUS           +
+13      INTEGER        5
+13      SEMICOLON      ;
+14      LET            let
+14      ID             resta
+14      COLON          :
+14      I32            i32
+14      ASSIGN         =
+14      ID             edad
+14      MINUS          -
+14      INTEGER        2
+14      SEMICOLON      ;
+15      LET            let
+15      ID             multiplicacion
+15      COLON          :
+15      I32            i32
+15      ASSIGN         =
+15      ID             edad
+15      TIMES          *
+15      INTEGER        2
+15      SEMICOLON      ;
+16      LET            let
+16      ID             division
+16      COLON          :
+16      F64            f64
+16      ASSIGN         =
+16      ID             altura
+16      DIVIDE         /
+16      FLOAT          2.0
+16      SEMICOLON      ;
+17      LET            let
+17      MUT            mut
+17      ID             contador
+17      COLON          :
+17      I32            i32
+17      ASSIGN         =
+17      INTEGER        0
+17      SEMICOLON      ;
+18      LET            let
+18      ID             numeros
+18      ASSIGN         =
+18      VEC            vec!
+18      LBRACKET       [
+18      INTEGER        1
+18      COMMA          ,
+18      INTEGER        2
+18      COMMA          ,
+18      INTEGER        3
+18      RBRACKET       ]
+18      SEMICOLON      ;
+19      FOR            for
+19      ID             numero
+19      IN             in
+19      ID             numeros
+19      DOT            .
+19      ID             iter
+19      LPAREN         (
+19      RPAREN         )
+19      LBRACE         {
+20      ID             contador
+20      PLUS           +
+20      ASSIGN         =
+20      ID             numero
+20      SEMICOLON      ;
+21      RBRACE         }
+23      IF             if
+23      ID             activo
+23      LBRACE         {
+24      PRINTLN        println!
+24      LPAREN         (
+24      STRING         Hola, mundo! {}
+24      COMMA          ,
+24      ID             nombre
+24      RPAREN         )
+24      SEMICOLON      ;
+25      RBRACE         }
+25      ELSE           else
+25      LBRACE         {
+26      PRINTLN        println!
+26      LPAREN         (
+26      STRING         Usuario inactivo
+26      RPAREN         )
+26      SEMICOLON      ;
+27      RBRACE         }
+28      RBRACE         }
+
+ERRORES
+Ninguno
+
+Total: 125 tokens válidos, 0 errores
