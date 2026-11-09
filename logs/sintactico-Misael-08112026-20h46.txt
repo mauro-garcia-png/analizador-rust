@@ -1,0 +1,10 @@
+ANÁLISIS SINTÁCTICO
+Archivo: algoritmos/algoritmo1.rs
+Desarrollador: Misael
+Fecha: 08/11/2026 20:46:18
+
+ERRORES
+Error sintáctico en línea 41: token inesperado '('.
+Error sintáctico en línea 44: token inesperado '}'.
+
+Resultado: 2 errores

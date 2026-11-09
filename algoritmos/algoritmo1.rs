@@ -38,7 +38,7 @@ fn main() {
     }
     saludar();
     let mut entrada = String::new();
-    io::stdin().read_line(&mut entrada);
+    std::io::stdin().read_line(&mut entrada).unwrap();
     edad = edad + 1;
     println!("Nueva edad: {}", edad);
 }

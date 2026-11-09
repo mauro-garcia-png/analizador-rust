@@ -37,7 +37,7 @@ def p_programa(p):
 
 def p_elementos(p):
     '''elementos : elementos elemento
-                 | elemento'''
+                | elemento'''
     p[0] = p[1] + [p[2]] if len(p) == 3 else [p[1]]
 
 
@@ -49,15 +49,59 @@ def p_elemento(p):
 
 def p_bloque(p):
     '''bloque : LBRACE sentencias RBRACE
-              | LBRACE RBRACE'''
+            | LBRACE RBRACE'''
     p[0] = ('bloque', p[2] if len(p) == 4 else [])
 
 
 def p_sentencias(p):
     '''sentencias : sentencias sentencia
-                  | sentencia'''
+                | sentencia'''
     p[0] = p[1] + [p[2]] if len(p) == 3 else [p[1]]
 
+
+# >>> INICIO APORTE INTEGRANTE 1: Misael Moreira (mijo5002)
+
+# ------------------------------------------------------------
+# 1. Condicional IF
+# Ejemplo: if edad > 18 { ... }
+# ------------------------------------------------------------
+
+def p_sentencia_if(p):
+    '''sentencia : IF expresion bloque'''
+    p[0] = ('if', p[2], p[3])
+
+
+# ------------------------------------------------------------
+# 2. Condicional IF - ELSE
+# Ejemplo: if activo { ... } else { ... }
+# ------------------------------------------------------------
+
+def p_sentencia_if_else(p):
+    '''sentencia : IF expresion bloque ELSE bloque'''
+    p[0] = ('if_else', p[2], p[3], p[5])
+
+
+# ------------------------------------------------------------
+# 3. Declaración de arreglos literales
+# Ejemplo: let numeros = [10, 20, 30];
+# ------------------------------------------------------------
+
+def p_expresion_arreglo(p):
+    '''expresion : LBRACKET lista_expresiones_opt RBRACKET'''
+    p[0] = ('arreglo', p[2])
+
+
+# ------------------------------------------------------------
+# 4. Llamadas a funciones como instrucciones
+# Ejemplo: saludar();
+#          mostrar(nombre);
+# ------------------------------------------------------------
+
+def p_sentencia_llamada_funcion(p):
+    '''sentencia : expresion SEMICOLON'''
+    p[0] = ('sentencia_expresion', p[1])
+
+# <<< FIN APORTE INTEGRANTE 1
 
 # >>> INICIO APORTE INTEGRANTE 2: Mauro Garcia (mauro-garcia-png)
 # Reglas: declaración con let mut, asignación, expresiones aritméticas,
@@ -231,7 +275,7 @@ def p_expresion_vector(p):
 
 def p_lista_expresiones_opt(p):
     '''lista_expresiones_opt : lista_expresiones
-                             | empty'''
+                            | empty'''
     p[0] = p[1]
 
 
@@ -344,7 +388,7 @@ def generar_log(archivo, usuario, errores):
         f.write("ERRORES\n")
         f.write("\n".join(errores) + "\n" if errores else "Ninguno\n")
         f.write("\nResultado: " + ("análisis exitoso" if not errores
-                                   else f"{len(errores)} errores") + "\n")
+                                else f"{len(errores)} errores") + "\n")
     return ruta
 
 
