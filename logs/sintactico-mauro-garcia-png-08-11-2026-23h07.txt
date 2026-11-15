@@ -1,0 +1,12 @@
+ANÁLISIS SINTÁCTICO
+Archivo: algoritmos/sintactico_mauro_error.rs
+Desarrollador: mauro-garcia-png
+Fecha: 08/11/2026 23:07:36
+
+ERRORES
+Error sintáctico en línea 7: token inesperado 'let'.
+Error sintáctico en línea 8: token inesperado '{'.
+Error sintáctico en línea 11: token inesperado '}'.
+Error sintáctico en línea 14: token inesperado '}'.
+
+Resultado: 4 errores
