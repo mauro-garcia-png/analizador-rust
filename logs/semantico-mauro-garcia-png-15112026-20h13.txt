@@ -1,0 +1,14 @@
+ANÁLISIS SEMÁNTICO
+Archivo: algoritmos/semantico_mauro_error.rs
+Desarrollador: mauro-garcia-png
+Fecha: 15/11/2026 20:13:57
+
+ERRORES
+Error semántico: no se puede asignar dos veces a la variable inmutable 'edad'. Declárela con 'let mut edad'.
+Error semántico: no se puede asignar a 'contador' porque no ha sido declarada.
+Error semántico: tipos incompatibles en la asignación a 'total': se esperaba i32 y se encontró f64.
+Error semántico: tipos incompatibles en la operación 'i32 + f64'; Rust no convierte implícitamente entre i32 y f64.
+Error semántico: el operador '*' no se puede aplicar al tipo bool (i32 * bool).
+Error semántico: el operador '-' no se puede aplicar al tipo String (String - i32).
+
+Resultado: 6 errores
