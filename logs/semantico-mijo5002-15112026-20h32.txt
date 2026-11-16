@@ -1,0 +1,9 @@
+ANÁLISIS SEMÁNTICO
+Archivo: algoritmos/semantico_misael.rs
+Desarrollador: mijo5002
+Fecha: 15/11/2026 20:32:39
+
+ERRORES
+Ninguno
+
+Resultado: análisis exitoso

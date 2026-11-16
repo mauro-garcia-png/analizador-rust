@@ -78,8 +78,9 @@ def tipo_expresion(nodo):
     if clase == 'bool':
         return 'bool'
     if clase == 'id':
-        simbolo = tabla.buscar(nodo[1])
-        return simbolo['tipo'] if simbolo else None
+        # RS02 - Misael: verificar variable declarada
+        return regla_misael_variable_declarada(nodo[1])
+
     if clase == 'binop':
         return regla_mauro_operacion_aritmetica(nodo)
     if clase == 'neg':
@@ -137,10 +138,16 @@ def analizar_sentencia(nodo):
     elif clase == 'let_mut':
         tabla.declarar(nodo[1], tipo_expresion(nodo[2]), True)
     elif clase == 'declaracion_tipada':
-        tipo_expresion(nodo[3])
+        # RS01 - Misael: verificar compatibilidad de tipos
+        regla_misael_tipos_declaracion(
+            nodo[1], nodo[2], nodo[3]
+        )
         tabla.declarar(nodo[1], nodo[2], False)
     elif clase == 'declaracion_tipada_mut':
-        tipo_expresion(nodo[3])
+        # RS01 - Misael: verificar compatibilidad de tipos
+        regla_misael_tipos_declaracion(
+            nodo[1], nodo[2], nodo[3]
+        )
         tabla.declarar(nodo[1], nodo[2], True)
     elif clase == 'asignacion':
         regla_mauro_asignacion_mutable(nodo[1], nodo[2])
@@ -173,21 +180,63 @@ def analizar_sentencia(nodo):
         tipo_expresion(nodo[1])
 
 
+
 # >>> INICIO APORTE INTEGRANTE 1: Misael Moreira (mijo5002)
-# (pendiente: reglas semánticas del Integrante 1)
-# <<< FIN APORTE INTEGRANTE 1
+
+# ------------------------------------------------------------
+# RS01 - Compatibilidad de tipos en declaraciones
+#
+# Verifica que el tipo de la expresión coincida con el tipo
+# especificado al declarar una variable.
+#
+# Ejemplos:
+# let edad: i32 = 23;        -> Correcto
+# let edad: i32 = "Hola";    -> Error semántico
+# ------------------------------------------------------------
+
+def regla_misael_tipos_declaracion(nombre, tipo_declarado, expresion):
+    tipo_obtenido = tipo_expresion(expresion)
+
+    # Si no se pudo determinar el tipo, no se reporta
+    # incompatibilidad para evitar errores adicionales.
+    if tipo_obtenido is None:
+        return
+
+    if tipo_declarado != tipo_obtenido:
+        error(
+            f"tipos incompatibles en la declaración de '{nombre}': "
+            f"se esperaba {tipo_declarado} "
+            f"y se encontró {tipo_obtenido}."
+        )
 
 
-# >>> INICIO APORTE INTEGRANTE 2: Mauro Garcia (mauro-garcia-png)
 # ------------------------------------------------------------
-# Regla semántica 1 (Mauro): Asignación solo a variables declaradas y mutables.
-#   En Rust una variable declarada con `let` (sin `mut`) es inmutable, y no se
-#   puede asignar a una variable que no existe.
-#   Aplica a:  x = expr;   y a   read_line(&mut x)
-#   Ejemplos con error:
-#       let edad = 18;  edad = 20;      -> variable inmutable
-#       total = 5;                      -> variable no declarada
+# RS02 - Uso de variables previamente declaradas
+#
+# Comprueba que los identificadores utilizados en expresiones
+# existan en la tabla de símbolos.
+#
+# Ejemplos:
+# let edad = 23;
+# let doble = edad + 2;        -> Correcto
+# let total = desconocida + 2; -> Error semántico
 # ------------------------------------------------------------
+
+def regla_misael_variable_declarada(nombre):
+    simbolo = tabla.buscar(nombre)
+
+    if simbolo is None:
+        error(
+            f"la variable '{nombre}' se utiliza "
+            f"sin haber sido declarada previamente."
+        )
+        return None
+
+    return simbolo['tipo']
+
+
+# <<< FIN APORTE
+
 def regla_mauro_asignacion_mutable(nombre, expresion):
     tipo_nuevo = tipo_expresion(expresion) if expresion is not None else None
     simbolo = tabla.buscar(nombre)

@@ -1,0 +1,13 @@
+ANÁLISIS SEMÁNTICO
+Archivo: algoritmos/semantico_misael_error.rs
+Desarrollador: mijo5002
+Fecha: 15/11/2026 20:33:17
+
+ERRORES
+Error semántico: tipos incompatibles en la declaración de 'numero': se esperaba i32 y se encontró String.
+Error semántico: tipos incompatibles en la declaración de 'texto': se esperaba String y se encontró i32.
+Error semántico: tipos incompatibles en la declaración de 'cantidad': se esperaba i32 y se encontró f64.
+Error semántico: la variable 'desconocida' se utiliza sin haber sido declarada previamente.
+Error semántico: la variable 'variable_inexistente' se utiliza sin haber sido declarada previamente.
+
+Resultado: 5 errores
