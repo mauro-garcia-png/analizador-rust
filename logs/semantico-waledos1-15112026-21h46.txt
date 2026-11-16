@@ -1,0 +1,10 @@
+ANÁLISIS SEMÁNTICO
+Archivo: algoritmos/semantico_walter_vector_error.rs
+Desarrollador: waledos1
+Fecha: 15/11/2026 21:46:50
+
+ERRORES
+Error semántico: índice 5 fuera de rango en el vector 'numeros' de tamaño 3.
+Error semántico: el índice del vector 'numeros' debe ser entero, pero se encontró f64.
+
+Resultado: 2 errores

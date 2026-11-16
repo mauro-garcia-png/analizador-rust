@@ -1,0 +1,9 @@
+ANÁLISIS SEMÁNTICO
+Archivo: algoritmos/semantico_walter_error.rs
+Desarrollador: waledos1
+Fecha: 15/11/2026 21:20:00
+
+ERRORES
+Error semántico: tipo de retorno incompatible en la función 'calcular': se esperaba i32 y se encontró f64.
+
+Resultado: 1 errores

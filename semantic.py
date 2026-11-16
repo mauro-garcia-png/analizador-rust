@@ -46,6 +46,7 @@ class TablaSimbolos:
 
 
 tabla = TablaSimbolos()
+funcion_actual = None
 
 
 def error(mensaje):
@@ -105,8 +106,7 @@ def tipo_expresion(nodo):
         f = tabla.funciones.get(nodo[1])
         return f['retorno'] if f else None
     if clase == 'acceso_vector':
-        tipo_expresion(nodo[2])
-        return None
+        return regla_walter_indice_vector(nodo[1], nodo[2])
     return None
 
 
@@ -121,22 +121,48 @@ def analizar_bloque(bloque):
 
 
 def analizar_sentencia(nodo):
+    global funcion_actual
     if not isinstance(nodo, tuple):
         return
     clase = nodo[0]
 
     if clase == 'funcion':
         _, nombre, params, retorno, bloque = nodo
-        tabla.funciones[nombre] = {'params': params, 'retorno': retorno}
+
+        tabla.funciones[nombre] = {
+            'params': params,
+            'retorno': retorno
+        }
+
+        funcion_anterior = funcion_actual
+        funcion_actual = (nombre, retorno)
+
         tabla.abrir()
+
         for (pid, ptipo) in params:
             tabla.declarar(pid, ptipo, False)
+
         analizar_bloque(bloque)
+
         tabla.cerrar()
+        funcion_actual = funcion_anterior
+
     elif clase == 'declaracion':
-        tabla.declarar(nodo[1], tipo_expresion(nodo[2]), False)
+        tipo = tipo_expresion(nodo[2])
+        tabla.declarar(nodo[1], tipo, False)
+
+        if tipo == 'vector':
+            tabla.buscar(nodo[1])['tamano'] = (
+                regla_walter_tamano_vector(nodo[2])
+            )
     elif clase == 'let_mut':
-        tabla.declarar(nodo[1], tipo_expresion(nodo[2]), True)
+        tipo = tipo_expresion(nodo[2])
+        tabla.declarar(nodo[1], tipo, True)
+
+        if tipo == 'vector':
+            tabla.buscar(nodo[1])['tamano'] = (
+                regla_walter_tamano_vector(nodo[2])
+            )
     elif clase == 'declaracion_tipada':
         # RS01 - Misael: verificar compatibilidad de tipos
         regla_misael_tipos_declaracion(
@@ -172,7 +198,16 @@ def analizar_sentencia(nodo):
         analizar_bloque(bloque)
         tabla.cerrar()
     elif clase == 'return':
-        tipo_expresion(nodo[1])
+        if funcion_actual is not None:
+            nombre, tipo_esperado = funcion_actual
+
+            regla_walter_tipo_retorno(
+                nombre,
+                tipo_esperado,
+                nodo[1]
+            )
+        else:
+            error("sentencia return fuera de una función.")
     elif clase == 'println':
         for e in nodo[1]:
             tipo_expresion(e)
@@ -283,7 +318,90 @@ def regla_mauro_operacion_aritmetica(nodo):
 
 
 # >>> INICIO APORTE INTEGRANTE 3: Walter Murillo (waledos1)
-# (pendiente: reglas semánticas del Integrante 3)
+# ------------------------------------------------------------
+# RS05 - Validación del tipo de retorno de funciones
+#
+# Comprueba que el tipo de la expresión retornada coincida
+# con el tipo declarado en la función.
+# ------------------------------------------------------------
+
+def regla_walter_tipo_retorno(nombre_funcion, tipo_esperado, expresion):
+    tipo_obtenido = tipo_expresion(expresion)
+
+    if tipo_esperado is None:
+        error(
+            f"la función '{nombre_funcion}' no declara un tipo "
+            f"de retorno, pero contiene una sentencia return."
+        )
+        return
+
+    if tipo_obtenido is None:
+        return
+
+    if tipo_esperado != tipo_obtenido:
+        error(
+            f"tipo de retorno incompatible en la función "
+            f"'{nombre_funcion}': se esperaba {tipo_esperado} "
+            f"y se encontró {tipo_obtenido}."
+        )
+
+
+
+# ------------------------------------------------------------
+# RS06 - Validación de índices de vectores
+#
+# Comprueba que el índice sea entero y que esté dentro
+# de los límites cuando el tamaño sea conocido.
+# ------------------------------------------------------------
+
+def regla_walter_indice_vector(nombre, indice):
+    simbolo = tabla.buscar(nombre)
+
+    # Evitar duplicar errores de variables no declaradas.
+    if simbolo is None:
+        error(
+            f"el vector '{nombre}' no ha sido declarado."
+        )
+        return None
+
+    if simbolo['tipo'] != 'vector':
+        error(
+            f"la variable '{nombre}' no es un vector."
+        )
+        return None
+
+    tipo_indice = tipo_expresion(indice)
+
+    if tipo_indice is None:
+        return None
+
+    if tipo_indice != 'i32':
+        error(
+            f"el índice del vector '{nombre}' debe ser "
+            f"entero, pero se encontró {tipo_indice}."
+        )
+        return None
+
+    # Comprobar límites cuando el índice es una constante.
+    if indice[0] == 'valor' and isinstance(indice[1], int) \
+            and not isinstance(indice[1], bool):
+
+        posicion = indice[1]
+        tamano = simbolo.get('tamano')
+
+        if tamano is not None and not (0 <= posicion < tamano):
+            error(
+                f"índice {posicion} fuera de rango en el "
+                f"vector '{nombre}' de tamaño {tamano}."
+            )
+            return None
+
+    return None
+
+def regla_walter_tamano_vector(expresion):
+    if isinstance(expresion, tuple) and expresion[0] in ('vector', 'arreglo'):
+        return len(expresion[1])
+    return None
 # <<< FIN APORTE INTEGRANTE 3
 
 
@@ -291,8 +409,10 @@ def regla_mauro_operacion_aritmetica(nodo):
 # Ejecución y logs (común)
 # ------------------------------------------------------------
 def analizar(codigo):
-    global tabla
+    global tabla, funcion_actual
+
     tabla = TablaSimbolos()
+    funcion_actual = None
     errores_semanticos.clear()
     arbol, errores_previos = rust_parser.analizar(codigo)
     if errores_previos:
