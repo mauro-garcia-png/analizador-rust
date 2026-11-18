@@ -1,0 +1,9 @@
+ANÁLISIS SINTÁCTICO
+Archivo: algoritmo2.rs
+Desarrollador: mauro-garcia-png
+Fecha: 17/11/2026 21:11:34
+
+ERRORES
+Ninguno
+
+Resultado: análisis exitoso

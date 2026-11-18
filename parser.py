@@ -35,10 +35,25 @@ def p_programa(p):
     p[0] = ('programa', p[1])
 
 
+class Nodo(tuple):
+    """Nodo del árbol que además guarda la línea donde empieza la sentencia."""
+    linea = None
+
+
+def con_linea(nodo, linea):
+    if isinstance(nodo, tuple):
+        nodo = Nodo(nodo)
+        nodo.linea = linea
+    return nodo
+
+
 def p_elementos(p):
     '''elementos : elementos elemento
                 | elemento'''
-    p[0] = p[1] + [p[2]] if len(p) == 3 else [p[1]]
+    if len(p) == 3:
+        p[0] = p[1] + [con_linea(p[2], p.lineno(2))]
+    else:
+        p[0] = [con_linea(p[1], p.lineno(1))]
 
 
 def p_elemento(p):
@@ -56,7 +71,10 @@ def p_bloque(p):
 def p_sentencias(p):
     '''sentencias : sentencias sentencia
                 | sentencia'''
-    p[0] = p[1] + [p[2]] if len(p) == 3 else [p[1]]
+    if len(p) == 3:
+        p[0] = p[1] + [con_linea(p[2], p.lineno(2))]
+    else:
+        p[0] = [con_linea(p[1], p.lineno(1))]
 
 
 # >>> INICIO APORTE INTEGRANTE 1: Misael Moreira (mijo5002)
@@ -371,7 +389,8 @@ def analizar(codigo):
     errores_sintacticos.clear()
     rust_lexer.errores.clear()
     lex = rust_lexer.lex.lex(module=rust_lexer)
-    resultado = parser.parse(codigo, lexer=lex)
+    # tracking=True permite conocer la línea de cada sentencia (p.lineno)
+    resultado = parser.parse(codigo, lexer=lex, tracking=True)
     return resultado, list(rust_lexer.errores) + list(errores_sintacticos)
 
 

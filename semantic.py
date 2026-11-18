@@ -47,10 +47,14 @@ class TablaSimbolos:
 
 tabla = TablaSimbolos()
 funcion_actual = None
+linea_actual = None  # línea de la sentencia que se está analizando
 
 
 def error(mensaje):
-    errores_semanticos.append(f"Error semántico: {mensaje}")
+    if linea_actual:
+        errores_semanticos.append(f"Error semántico en línea {linea_actual}: {mensaje}")
+    else:
+        errores_semanticos.append(f"Error semántico: {mensaje}")
 
 
 # ------------------------------------------------------------
@@ -121,9 +125,11 @@ def analizar_bloque(bloque):
 
 
 def analizar_sentencia(nodo):
-    global funcion_actual
+    global funcion_actual, linea_actual
     if not isinstance(nodo, tuple):
         return
+    linea_anterior = linea_actual
+    linea_actual = getattr(nodo, 'linea', None) or linea_actual
     clase = nodo[0]
 
     if clase == 'funcion':
@@ -213,6 +219,8 @@ def analizar_sentencia(nodo):
             tipo_expresion(e)
     elif clase == 'sentencia_expresion':
         tipo_expresion(nodo[1])
+
+    linea_actual = linea_anterior
 
 
 
@@ -409,10 +417,11 @@ def regla_walter_tamano_vector(expresion):
 # Ejecución y logs (común)
 # ------------------------------------------------------------
 def analizar(codigo):
-    global tabla, funcion_actual
+    global tabla, funcion_actual, linea_actual
 
     tabla = TablaSimbolos()
     funcion_actual = None
+    linea_actual = None
     errores_semanticos.clear()
     arbol, errores_previos = rust_parser.analizar(codigo)
     if errores_previos:
@@ -425,7 +434,7 @@ def analizar(codigo):
 def generar_log(archivo, usuario, errores):
     ahora = datetime.now()
     os.makedirs(CARPETA_LOGS, exist_ok=True)
-    nombre = f"semantico-{usuario}-{ahora.strftime('%d%m%Y-%Hh%M')}.txt"
+    nombre = f"semantico-{usuario}-{ahora.strftime('%d-%m-%Y-%Hh%M')}.txt"
     ruta = os.path.join(CARPETA_LOGS, nombre)
     with open(ruta, 'w', encoding='utf-8') as f:
         f.write("ANÁLISIS SEMÁNTICO\n")
